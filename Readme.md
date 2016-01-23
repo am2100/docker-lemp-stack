@@ -1,7 +1,7 @@
 # Docker LEMP Stack
 An example docker-compose build of a Linux, Nginx, MySQL and PHP stack.
 
-Taken from: http://blog.osteel.me/posts/2015/12/18/from-vagrant-to-docker-how-to-use-docker-for-local-web-development.html?_tmc=p9YSlYM8PUi910_DgJBWHWy5TAOXitPRIcD-63k32ac&mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57e0oX66%2FlMI%2F0ER3fOvrPUfGjI4DTsJjI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D
+See [From Vagrant to Docker]( http://blog.osteel.me/posts/2015/12/18/from-vagrant-to-docker-how-to-use-docker-for-local-web-development.html?_tmc=p9YSlYM8PUi910_DgJBWHWy5TAOXitPRIcD-63k32ac&mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57e0oX66%2FlMI%2F0ER3fOvrPUfGjI4DTsJjI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D)
 
 ## Install docker-compose as superuser
 URL: https://github.com/docker/compose/releases
