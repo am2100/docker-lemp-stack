@@ -7,7 +7,7 @@ See [From Vagrant to Docker]( http://blog.osteel.me/posts/2015/12/18/from-vagran
 Links to installation instructions for Ubuntu (and other distributions / OS's) can be found on the [wiki](https://github.com/am2100/docker-lemp-stack/wiki).
 
 ## Stack description
-Docker Compose allows you to describe your stack specifying the different containers that will compose it through a YAML config file. As the recommended practice is to have one process per container, we will separate things as follows:
+These instructions will create the following single process containers
 
 1. a container for Nginx
 1. a container for PHP-FPM
@@ -15,8 +15,8 @@ Docker Compose allows you to describe your stack specifying the different contai
 1. a container for phpMyAdmin
 1. a container to make MySQL data persistent
 1. a container for the application code
+ 
+and link them together into a co-operating set of services.
 
-## Create docker-compose.yml
-In the root directory
-```yaml
-
+## Notes
+Notes describing the process and rationale behind the build can be found on the [wiki](https://github.com/am2100/docker-lemp-stack/wiki/Docker-LEMP-stack-notes).
