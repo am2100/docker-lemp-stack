@@ -11,10 +11,10 @@ These instructions will create the following single process containers
 
 1. a container for Nginx
 1. a container for PHP-FPM
+1. a container for the application code
 1. a container for MySQL
 1. a container for phpMyAdmin
 1. a container to make MySQL data persistent
-1. a container for the application code
  
 and link them together into a co-operating set of services.
 
