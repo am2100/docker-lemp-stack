@@ -1,4 +1,21 @@
-nginx:
-  image: nginx:latest
-  ports: 
+nginx:                   # Specify the location of the Dockerfile from
+  build: ./nginx/        # which the nginx container will be built.
+  ports:
     - 80:80
+  links:                 # Tell docker-compose that it needs to link 
+    - php                # the nginx container to the php container.
+  volumes_from:          # Give the nginx container access to the content
+    - app                # it needs to serve inside the app container.
+
+php:
+  image: php:7.0-fpm     # Use the official PHP image:tag.
+  expose:                # Use the expose key to make port 9000 only available
+    - 9000               # to other containers, and not the host machine.
+  volumes_from:          # Mount the volume contained inside the app container.
+    - app                
+
+app:
+  image: php:7.0-fpm     # Use an image that already exists.
+  volumes:
+    - .:/var/www/html    # Mount the current directory inside the container.
+  command: 'true'        # Run a single command and allow the container to stop.
