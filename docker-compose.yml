@@ -8,7 +8,7 @@ nginx:                   # Specify the location of the Dockerfile from
     - app                # it needs to serve inside the app container.
 
 php:
-  image: php:7.0-fpm     # Use the official PHP image:tag.
+  build: ./php/          # Specify build from Dockerfile in php/ directory.
   expose:                # Use the expose key to make port 9000 only available
     - 9000               # to other containers, and not the host machine.
   volumes_from:          # Mount the volume contained inside the app container.
