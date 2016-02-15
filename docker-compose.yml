@@ -11,6 +11,8 @@ php:
   build: ./php/          # Specify build from Dockerfile in php/ directory.
   expose:                # Use the expose key to make port 9000 only available
     - 9000               # to other containers, and not the host machine.
+  links:
+    - mysql
   volumes_from:          # Mount the volume contained inside the app container.
     - app                
 
@@ -19,3 +21,28 @@ app:
   volumes:
     - .:/var/www/html    # Mount the current directory inside the container.
   command: 'true'        # Run a single command and allow the container to stop.
+
+mysql:
+  image: mysql:latest
+  volumes_from:
+    - data
+  environment:
+    MYSQL_ROOT_PASSWORD: secret
+    MYSQL_DATABASE: project
+    MYSQL_USER: project
+    MYSQL_PASSWORD: project
+
+data:
+  image: mysql:latest
+  volumes:
+    - /var/lib/mysql
+  command: "true"
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin:4.5.3.1-1
+  ports:
+    - 8080:8080
+  links:
+    - mysql
+  environment:
+    PMA_HOST: mysql
